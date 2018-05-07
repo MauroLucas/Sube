@@ -1,0 +1,9 @@
+https://www.gba.gob.ar/infraestructura/boleto
+https://www.argentina.gob.ar/solicitar-la-tarifa-social-sube
+
+tipos de usuarios?
+clave primaria de usuario por tipo y dni compuesto o solo id?
+tabla de sesiones?
+patrones se modelan?
+lista de transacciones  en clase tarjeta sube?
+metodos en diagrama de clases?
