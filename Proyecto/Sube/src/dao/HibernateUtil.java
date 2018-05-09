@@ -19,6 +19,7 @@ public class HibernateUtil {
 				sessionFactory = configuration.buildSessionFactory(serviceRegistry);
 			}
 		} catch (HibernateException he) {
+			he.printStackTrace();
 			throw new ExceptionInInitializerError(he); // unhandled
 		}
 		

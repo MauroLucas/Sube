@@ -18,7 +18,7 @@ public class DAO {
 		throw new HibernateException("Error accediendo a los datos.", he);
 	}
 	
-	protected <E> long agregar(E objeto) throws HibernateException {
+	public <E> long agregar(E objeto) throws HibernateException {
 		long id = 0;
 		try {
 			iniciaOperacion();
@@ -33,7 +33,7 @@ public class DAO {
 		return id;	
 	}
 	
-	protected <E> boolean actualizar(E objeto) throws HibernateException {
+	public <E> boolean actualizar(E objeto) throws HibernateException {
 		boolean seActualizo = false;
 		try {
 			iniciaOperacion();
@@ -49,7 +49,7 @@ public class DAO {
 		return seActualizo;
 	}
 	
-	protected <E> boolean eliminar(E objeto) throws HibernateException {
+	public <E> boolean eliminar(E objeto) throws HibernateException {
 		boolean seElimino = false;
 		try {
 			iniciaOperacion();
