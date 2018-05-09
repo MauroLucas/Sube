@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="datos.Contacto" table="contacto">
+	    <id name="idContacto" column="idContacto" type="long">
+	        <generator class="identity"/>
+	    </id>
+		    
+    	<property column="mail" name="mail" type="string"/>
+    	<property column="movil" name="movil" type="string"/>
+    	<property column="fijo" name="fijo" type="string"/>
+	</class>
+	
+	<class name="datos.DatosUsuario" table="datosusuario">
+	    <id name="idDatosUsuario" column="idDatosUsuario" type="long">
+	        <generator class="identity"/>
+	    </id>
+	    
+	    <property column="nombre" name="nombre" type="string"/>
+	    <property column="apellido" name="apellido" type="string"/>
+	    <property column="nombre" name="nombre" type="string"/>
+	
+		<property name="genero" column="genero">
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">sor.hibernate.actors.enums.Generos</param>
+				<param name="useNamed">true</param>
+			</type>
+		</property>
+	
+	
+		<one-to-one name="contacto" class="datos.Contacto"/>
+	</class>
+	
+	<class name="datos.Usuario" table="usuario">
+		<id name="idUsuario" column="idUsuario" type="long">
+			<generator class="foreign">
+				<param name="property">datosUsuario</param>
+			</generator>
+		</id>
+		
+		<property column="documento" name="documento" type="string"/>
+		<property column="clave" name="clave" type="string"/>
+		<property column="fechaAlta" name="fechaAlta" type="calendar"/>
+		
+		<property name="tipoDocumento">
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">sor.hibernate.actors.enums.TipoDeDocumento</param>
+				<param name="useNamed">true</param>
+			</type>
+		</property>
+	</class>
+</hibernate-mapping>
