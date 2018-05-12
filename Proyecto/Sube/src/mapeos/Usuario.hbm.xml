@@ -3,9 +3,9 @@
 	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-	<class name="datos.Contacto" table="contacto">
+	 <class name="datos.Contacto" table="contacto">
 	    <id name="idContacto" column="idContacto" type="long">
-	        <generator class="identity"/>
+	        <generator class="native" />
 	    </id>
 		    
     	<property column="mail" name="mail" type="string"/>
@@ -13,42 +13,30 @@
     	<property column="fijo" name="fijo" type="string"/>
 	</class>
 	
-	<class name="datos.DatosUsuario" table="datosusuario">
+	<class name="datos.DatosUsuario" table="datosUsuario">
 	    <id name="idDatosUsuario" column="idDatosUsuario" type="long">
-	        <generator class="identity"/>
+	        <generator class="native" />
 	    </id>
-	    
+
 	    <property column="nombre" name="nombre" type="string"/>
 	    <property column="apellido" name="apellido" type="string"/>
-	    <property column="nombre" name="nombre" type="string"/>
-	
-		<property name="genero" column="genero">
-			<type name="org.hibernate.type.EnumType">
-				<param name="enumClass">sor.hibernate.actors.enums.Generos</param>
-				<param name="useNamed">true</param>
-			</type>
-		</property>
-	
-	
-		<one-to-one name="contacto" class="datos.Contacto"/>
+	    <property column="genero" name="genero" type="char"/>
+	    
+   	    <many-to-one name="contacto" column="contacto" class="datos.Contacto"
+	    		 unique="true" not-null="true" lazy="false" cascade="all"/>
 	</class>
 	
 	<class name="datos.Usuario" table="usuario">
 		<id name="idUsuario" column="idUsuario" type="long">
-			<generator class="foreign">
-				<param name="property">datosUsuario</param>
-			</generator>
-		</id>
+	        <generator class="native" />
+	    </id>
 		
 		<property column="documento" name="documento" type="string"/>
 		<property column="clave" name="clave" type="string"/>
 		<property column="fechaAlta" name="fechaAlta" type="calendar"/>
+		<property column="tipoDocumento" name="tipoDocumento" type="string"/>
 		
-		<property name="tipoDocumento">
-			<type name="org.hibernate.type.EnumType">
-				<param name="enumClass">sor.hibernate.actors.enums.TipoDeDocumento</param>
-				<param name="useNamed">true</param>
-			</type>
-		</property>
+	    <many-to-one name="datosUsuario" column="datosusuario" class="datos.DatosUsuario"
+	    		 unique="true" not-null="true" lazy="false" cascade="all"/>
 	</class>
 </hibernate-mapping>

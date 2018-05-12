@@ -2,11 +2,9 @@ package datos;
 
 import java.util.GregorianCalendar;
 
-import enums.TipoDeDocumento;
-
 public class Usuario {
 	private long idUsuario;
-	private TipoDeDocumento tipoDocumento;
+	private String tipoDocumento;
 	private String documento;
 	private String clave;
 	private GregorianCalendar fechaAlta;
@@ -14,7 +12,7 @@ public class Usuario {
 	
 	public Usuario() { }
 	
-	public Usuario(TipoDeDocumento tipoDocumento, String documento, String clave, GregorianCalendar fechaAlta,
+	public Usuario(String tipoDocumento, String documento, String clave, GregorianCalendar fechaAlta,
 			DatosUsuario datosUsuario) {
 		this.tipoDocumento = tipoDocumento;
 		this.documento = documento;
@@ -33,10 +31,10 @@ public class Usuario {
 	}
 
 	public String getTipoDocumento() {
-		return tipoDocumento.tipoDeDocumento();
+		return tipoDocumento;
 	}
 
-	public void setTipoDocumento(TipoDeDocumento tipoDocumento) {
+	public void setTipoDocumento(String tipoDocumento) {
 		this.tipoDocumento = tipoDocumento;
 	}
 
@@ -74,7 +72,7 @@ public class Usuario {
 
 	@Override
 	public String toString() {
-		return "Usuario [idUsuario=" + idUsuario + ", tipoDocumento=" + tipoDocumento.tipoDeDocumento() + ", documento=" + documento
+		return "Usuario [idUsuario=" + idUsuario + ", tipoDocumento=" + tipoDocumento + ", documento=" + documento
 				+ ", clave=" + clave + ", fechaAlta=" + fechaAlta + ", datosUsuario=" + datosUsuario + "]";
 	}
 }

@@ -1,17 +1,15 @@
 package datos;
 
-import enums.Generos;
-
 public class DatosUsuario {
 	private long idDatosUsuario;
 	private String nombre;
 	private String apellido;
-	private Generos genero;
+	private char genero;
 	private Contacto contacto;
 
 	public DatosUsuario() { }
 	
-	public DatosUsuario(String nombre, String apellido, Generos genero, Contacto contacto) {
+	public DatosUsuario(String nombre, String apellido, char genero, Contacto contacto) {
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.genero = genero;
@@ -51,11 +49,11 @@ public class DatosUsuario {
 		this.contacto = contacto;
 	}
 	
-	public String getGenero() {
-		return genero.genero();
+	public char getGenero() {
+		return genero;
 	}
 	
-	public void setGenero(Generos genero) {
+	public void setGenero(char genero) {
 		this.genero = genero;
 	}
 

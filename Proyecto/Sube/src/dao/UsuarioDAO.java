@@ -32,7 +32,7 @@ public class UsuarioDAO extends DAO {
 			usuario = (Usuario) session.createQuery("from Usuario u where u.idUsuario =" + idUsuario)
 										.uniqueResult();
 			Hibernate.initialize(usuario.getDatosUsuario());
-			Hibernate.initialize(usuario.getDatosUsuario().getContacto());
+			//Hibernate.initialize(usuario.getDatosUsuario().getContacto());
 		} catch (HibernateException he) {
 			manejaExcepcion(he);
 		} finally {
