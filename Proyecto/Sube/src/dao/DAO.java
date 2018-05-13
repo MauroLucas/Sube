@@ -5,20 +5,20 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 public class DAO {
-	protected static Session session;
-	protected Transaction tx;
+	private static Session session;
+	private Transaction tx;
 	
-	protected void iniciaOperacion() throws HibernateException {
+	private void iniciaOperacion() throws HibernateException {
 		session = HibernateUtil.getSessionFactory().openSession();
 		tx = session.beginTransaction();
 	}
 	
-	protected void manejaExcepcion(HibernateException he) throws HibernateException {
+	private void manejaExcepcion(HibernateException he) throws HibernateException {
 		tx.rollback();
 		throw new HibernateException("Error accediendo a los datos.", he);
 	}
 	
-	protected <E> long agregar(E objeto) throws HibernateException {
+	public <E> long agregar(E objeto) throws HibernateException {
 		long id = 0;
 		try {
 			iniciaOperacion();
@@ -33,7 +33,7 @@ public class DAO {
 		return id;	
 	}
 	
-	protected <E> boolean actualizar(E objeto) throws HibernateException {
+	public <E> boolean actualizar(E objeto) throws HibernateException {
 		boolean seActualizo = false;
 		try {
 			iniciaOperacion();
@@ -49,7 +49,7 @@ public class DAO {
 		return seActualizo;
 	}
 	
-	protected <E> boolean eliminar(E objeto) throws HibernateException {
+	public <E> boolean eliminar(E objeto) throws HibernateException {
 		boolean seElimino = false;
 		try {
 			iniciaOperacion();
