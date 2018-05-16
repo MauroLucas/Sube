@@ -14,7 +14,7 @@ public class TestTransacciones {
 			//RecargaABM abm=RecargaABM.getInstance();
 			//abm.agregar(50, Funciones.traerFecha(2018, 5, 9),1);
 			ViajeTrenABM abm=ViajeTrenABM.getInstance();
-			abm.agregar(3,Funciones.traerFecha(2018,5,10,9,0,0),1,1,"Lomas","Constitucion");
+			abm.agregar(3,Funciones.traerFecha(2018,5,10,9,0,0),1,1,1,1);
 			
 		}
 		catch(Exception e){

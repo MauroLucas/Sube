@@ -5,6 +5,8 @@ import java.util.GregorianCalendar;
 public class ViajeColectivo extends Viaje {
 	
 	private int tramo;
+	
+	public ViajeColectivo() {}
 
 	public ViajeColectivo(float monto, GregorianCalendar fechaHora, int tarjetaSube, int colectivo, int tramo) {
 		super(monto, fechaHora, tarjetaSube, colectivo);

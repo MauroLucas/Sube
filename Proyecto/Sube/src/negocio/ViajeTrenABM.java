@@ -19,7 +19,7 @@ public class ViajeTrenABM {
 	
 	ViajeTrenDao dao=ViajeTrenDao.getInstance();
 	
-	public long agregar(float monto, GregorianCalendar fechaHora, int tarjetaSube, int tren, String origen, String destino) {
+	public long agregar(float monto, GregorianCalendar fechaHora, int tarjetaSube, int tren, int origen, int destino) {
 		ViajeTren vt=new ViajeTren(monto,fechaHora,tarjetaSube,tren,origen,destino);
 		return dao.agregar(vt);
 	}
