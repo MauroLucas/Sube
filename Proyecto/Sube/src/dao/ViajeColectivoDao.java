@@ -4,6 +4,16 @@ import datos.ViajeColectivo;
 
 public class ViajeColectivoDao {
 	
+	private static ViajeColectivoDao instancia = null; // Patrón Singleton
+
+	protected ViajeColectivoDao() {}
+
+	public static ViajeColectivoDao getInstance() {
+		if (instancia == null)
+			instancia = new ViajeColectivoDao();
+		return instancia;
+	}
+	
 	DAO dao= Singleton.getInstanciaDao();
 	
 	public long agregar(ViajeColectivo vc) {

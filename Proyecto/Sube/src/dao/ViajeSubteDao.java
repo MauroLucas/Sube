@@ -4,6 +4,16 @@ import datos.ViajeSubte;
 
 public class ViajeSubteDao {
 	
+	private static ViajeSubteDao instancia = null; // Patrón Singleton
+
+	protected ViajeSubteDao() {}
+
+	public static ViajeSubteDao getInstance() {
+		if (instancia == null)
+			instancia = new ViajeSubteDao();
+		return instancia;
+	}
+	
 	DAO dao= Singleton.getInstanciaDao();
 	
 	public long agregar(ViajeSubte vs) {
