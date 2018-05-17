@@ -1,6 +1,7 @@
 package negocio;
 
 import java.util.GregorianCalendar;
+import java.util.List;
 
 import dao.*;
 import datos.*;
@@ -30,6 +31,14 @@ public class TransaccionABM {
 	
 	public boolean eliminarRecarga(Recarga r) {
 		return dao.eliminar(r);
+	}
+	
+	public Recarga traerRecarga(int idRecarga) {
+		return dao.traerRecarga(idRecarga);
+	}
+	
+	public List<Recarga> traerRecarga() {
+		return dao.traerRecarga();
 	}
 	
 	ViajeTrenDao daoVT=ViajeTrenDao.getInstance();

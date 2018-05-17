@@ -18,22 +18,22 @@
 	<joined-subclass table="viaje" name="datos.Viaje">
 		<key column="idViaje"/>
 		<property column="idTransportePublico" name="transporte" type="int"/>
-	</joined-subclass>
-	
-	<joined-subclass table="viajecolectivo" name="datos.ViajeColectivo">
-		<key column="idViajeColectivo"/>
-		<property column="idTramo" name="tramo" type="int"/>
-	</joined-subclass>
-	
-	<joined-subclass table="viajesubte" name="datos.ViajeSubte">
-		<key column="idViajeSubte"/>
-		<property column="idParada" name="origen" type="int"/>
-	</joined-subclass>
-	
-	<joined-subclass table="viajetren" name="datos.ViajeTren">
-		<key column="idViajeTren"/>
-		<property column="idParadaOrigen" name="origen" type="int"/>
-		<property column="idParadaDestino" name="destino" type="int"/>
+		
+		<joined-subclass table="viajecolectivo" name="datos.ViajeColectivo">
+			<key column="idViajeColectivo"/>
+			<property column="idTramo" name="tramo" type="int"/>
+		</joined-subclass>
+		
+		<joined-subclass table="viajesubte" name="datos.ViajeSubte">
+			<key column="idViajeSubte"/>
+			<property column="idParada" name="origen" type="int"/>
+		</joined-subclass>
+		
+		<joined-subclass table="viajetren" name="datos.ViajeTren">
+			<key column="idViajeTren"/>
+			<property column="idParadaOrigen" name="origen" type="int"/>
+			<property column="idParadaDestino" name="destino" type="int"/>
+		</joined-subclass>
 	</joined-subclass>
 		
 	</class>

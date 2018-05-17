@@ -1,8 +1,12 @@
 package dao;
 
+import java.util.List;
+
+import org.hibernate.HibernateException;
+
 import datos.Recarga;
 
-public class RecargaDao {
+public class RecargaDao extends DAO{
 	
 	private static RecargaDao instancia = null; // Patrón Singleton
 
@@ -26,6 +30,31 @@ public class RecargaDao {
 	
 	public boolean eliminar(Recarga r) {
 		return dao.eliminar(r);
+	}
+	
+	public Recarga traerRecarga(int idRecarga) throws HibernateException {
+		Recarga objeto = null;
+		try {
+		iniciaOperacion();
+		objeto = (Recarga)session.createQuery("from Recarga r where r.idRecarga="+idRecarga).uniqueResult();
+		} 
+		finally {
+		session.close();
+		}
+		return objeto;
+	}
+		
+	@SuppressWarnings ("unchecked")
+	public List<Recarga> traerRecarga() throws HibernateException {
+		List<Recarga> lista= null;
+		try {
+		iniciaOperacion();
+		lista=session.createQuery("from Recarga r order by r.idRecarga asc").list();
+		} 
+		finally {
+		session.close();
+		}
+		return lista;
 	}
 	
 }

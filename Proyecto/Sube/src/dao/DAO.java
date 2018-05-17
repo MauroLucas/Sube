@@ -5,10 +5,10 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 public class DAO {
-	private static Session session;
+	protected static Session session;
 	private Transaction tx;
 	
-	private void iniciaOperacion() throws HibernateException {
+	protected void iniciaOperacion() throws HibernateException {
 		session = HibernateUtil.getSessionFactory().openSession();
 		tx = session.beginTransaction();
 	}
