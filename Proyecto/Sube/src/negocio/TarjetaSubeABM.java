@@ -2,6 +2,7 @@ package negocio;
 
 import dao.TarjetaSubeDao;
 import datos.EstadoSube;
+import datos.RedSube;
 import datos.TarjetaSube;
 
 public class TarjetaSubeABM {
@@ -26,6 +27,10 @@ public class TarjetaSubeABM {
 				throw new Exception("La tarjeta no existe");  
 			else
 				dao.eliminar(t);
+	}
+	
+	public void modificar(TarjetaSube tarjetaSube) throws Exception{
+		dao.actualizar(tarjetaSube);
 	}
 
 }
