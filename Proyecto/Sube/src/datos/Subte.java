@@ -6,8 +6,8 @@ public class Subte extends TransportePublico {
 	
 	public Subte() {}
 	
-	public Subte(String linea) {
-		super(linea);
+	public Subte(long idSubte,String linea) {
+		super(idSubte,linea);
 	}
 
 	public Set<Parada> getParadas() {

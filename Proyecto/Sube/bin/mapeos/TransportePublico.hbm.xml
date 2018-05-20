@@ -5,7 +5,7 @@
 	<hibernate-mapping>
 	<class name="datos.TransportePublico" table="transportepublico">
 	 <id column="idTransportePublico" name="idTransporte">
-	  <generator class="identity"/>
+	 
 	 </id>
 	 
 	 <property column="linea" name="linea" type="string" />

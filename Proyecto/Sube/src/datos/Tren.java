@@ -8,8 +8,8 @@ public class Tren extends TransportePublico {
 	
 	public Tren() {}
 	
-	public Tren(String linea) {
-		super(linea);
+	public Tren(long idTren,String linea) {
+		super(idTren,linea);
 	}
 
 	public Set<Parada> getParadas() {

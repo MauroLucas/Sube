@@ -4,7 +4,7 @@
 	<hibernate-mapping>
 	    <class name="datos.Tramo" table="tramo">
 	        <id column="idTramo" name="idTramo">
-	            <generator class="identity"/>
+	           
 	        </id>
 	        <property column="distancia" name="distancia" type="string"/>
 	        <property column="costo" name="costo" type="float"/>

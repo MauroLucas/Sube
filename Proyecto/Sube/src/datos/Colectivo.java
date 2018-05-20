@@ -7,8 +7,8 @@ public class Colectivo extends TransportePublico {
 	
 	public Colectivo() {}
 	
-	public Colectivo(String linea) {
-		super(linea);
+	public Colectivo(long idColectivo,String linea) {
+		super(idColectivo,linea);
 		
 	}
 

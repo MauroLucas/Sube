@@ -6,12 +6,13 @@ public abstract class TransportePublico {
 	
 	public TransportePublico() {}
 	
-	public TransportePublico(String linea) {
+	public TransportePublico(long idTransporte,String linea) {
 		super();
+		this.idTransporte = idTransporte;
 		this.linea = linea;
 	}
 	
-	protected void setIdTransporte(long idTransporte) {
+	public void setIdTransporte(long idTransporte) {
 		this.idTransporte = idTransporte;
 	}
 	

@@ -5,7 +5,7 @@
 	    
 	    <class name="datos.Parada" table="parada">
 	        <id column="idParada" name="idParada">
-	            <generator class="identity"/>
+	           
 	        </id>
 	        <property column="nombre" name="nombre" type="string"/>
 	        

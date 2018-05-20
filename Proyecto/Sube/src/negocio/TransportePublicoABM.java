@@ -23,21 +23,21 @@ public class TransportePublicoABM  {
 		return TransportePublicoDao.getInstance().traerTransportePublico(idTransporte);
 	}
 	
-	public long agregarColectivo(String linea)throws Exception {
+	public long agregarColectivo(long id,String linea)throws Exception {
 		if(TransportePublicoDao.getInstance().traerTransportePublico(linea)!=null)throw new Exception("Linea existente");
-		Colectivo c = new Colectivo(linea);
+		Colectivo c = new Colectivo(id,linea);
 		return TransportePublicoDao.getInstance().agregar(c);
 	}
 	
-    public long agregarTren(String linea)throws Exception {
+    public long agregarTren(long id,String linea)throws Exception {
     	if(TransportePublicoDao.getInstance().traerTransportePublico(linea)!=null)throw new Exception("Linea existente");
-		Tren c = new Tren(linea);
+		Tren c = new Tren(id,linea);
 		return TransportePublicoDao.getInstance().agregar(c);
 		
 	}
-    public long agregarSubte(String linea)throws Exception {
+    public long agregarSubte(long id,String linea)throws Exception {
     	if(TransportePublicoDao.getInstance().traerTransportePublico(linea)!=null)throw new Exception("Linea existente");
-		Subte c = new Subte(linea);
+		Subte c = new Subte(id,linea);
 		return TransportePublicoDao.getInstance().agregar(c);
 		
 	}
