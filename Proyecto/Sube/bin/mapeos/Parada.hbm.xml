@@ -9,5 +9,7 @@
 	        </id>
 	        <property column="nombre" name="nombre" type="string"/>
 	        
+	        
+	        
 	    </class>
 	</hibernate-mapping>

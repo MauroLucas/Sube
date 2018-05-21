@@ -16,8 +16,8 @@ public class ParadaABM {
 	}
 	
 	
-	public long agregar(String nombre) {
-		Parada parada = new Parada(nombre);
+	public long agregar(long idParada,String nombre) {
+		Parada parada = new Parada(idParada,nombre);
 		return ParadaDao.getInstance().agregar(parada);
 	}
 	

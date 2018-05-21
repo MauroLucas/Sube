@@ -7,11 +7,12 @@ public class Parada {
 	
 	public Parada() {};
 	
-	public Parada(String nombre) {
+	public Parada(long parada,String nombre) {
+		this.idParada = parada;
 		this.nombre = nombre;
 	}
 	
-	protected void setIdParada(long idParada) {
+	public void setIdParada(long idParada) {
 		this.idParada = idParada;
 	}
 	
@@ -25,6 +26,14 @@ public class Parada {
 	
 	public String getNombre() {
 		return nombre;
+	}
+	
+	public boolean equals(Parada parada) {
+		boolean resultado=false;
+		if(parada.getIdParada()==this.idParada) {
+			resultado=true;
+		}
+		return resultado;
 	}
 
 	@Override

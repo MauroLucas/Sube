@@ -24,6 +24,18 @@ public class Tren extends TransportePublico {
 		return paradas.add(parada);
 	}
 	
+	public double calcularCostoDeViaje(Viaje viaje) {
+		double costoViaje=0;
+		return costoViaje;
+	}
+
+	@Override
+	public String toString() {
+		return "Tren [paradas=" + paradas + "]";
+	}
+	
+	
+	
 	
 
 }

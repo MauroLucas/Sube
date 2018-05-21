@@ -15,8 +15,13 @@
 		<!-- Mapeo de entidades -->
 		
 		<mapping resource="mapeos/Tramo.hbm.xml"/>
-		<mapping resource="mapeos/Parada.hbm.xml"/>
+		
 		<mapping resource="mapeos/TransportePublico.hbm.xml"/>
+		<mapping resource="mapeos/Seccion.hbm.xml"/>
+		<mapping resource="mapeos/Parada.hbm.xml"/>
+		<mapping resource="mapeos/SeccionRecorrido.hbm.xml"/>
+		
+		
 		
 	</session-factory>
 </hibernate-configuration>

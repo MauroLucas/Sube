@@ -21,6 +21,14 @@ public class Subte extends TransportePublico {
 	public boolean agregar(Parada parada) {
 		return paradas.add(parada);
 	}
+	
+	public double calcularCostoDeViaje(Viaje viaje) {
+		double costoViaje=0;
+		if(viaje instanceof ViajeSubte) {
+			 
+		}
+		return costoViaje;
+	}
 
 	@Override
 	public String toString() {
