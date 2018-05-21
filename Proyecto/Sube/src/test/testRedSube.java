@@ -14,23 +14,25 @@ public class testRedSube {
 		
 //		test.agregarRedSube();
 		
-//		test.eliminarRedSube(3);
+//		test.eliminarRedSube(6);
 		
-		System.out.println(test.modificarRedSube(4).toString());
+//		System.out.println(test.modificarRedSube(7).toString());
 		
+		System.out.println(test.traerRedSube(7).toString());
+
 	}
 	
 	public void agregarRedSube() {
 		RedSubeABM abmRedSube = new RedSubeABM();
-		GregorianCalendar fechaHora = new GregorianCalendar();
-		int contador=1; 
-		int nroTarjeta=4;
-		
+		GregorianCalendar fechaHora = null;
+		int contador=0; 
+		int nroTarjeta=7;
+		String linea="Roca";
 		TarjetaSubeABM abmTarjeta = new TarjetaSubeABM();
 		
 		try{
 			TarjetaSube tarjetasube= abmTarjeta.traerTarjetaSube(nroTarjeta);
-			abmRedSube.agregar(fechaHora, contador, tarjetasube);	
+			abmRedSube.agregar(fechaHora, contador, linea, tarjetasube);	
 		} catch(Exception e) {
 			System.out.println(e);
 		}
@@ -59,9 +61,12 @@ public class testRedSube {
 	public RedSube modificarRedSube(long idRedSube) {
 		RedSubeABM abm = new RedSubeABM();
 		RedSube rs = null;
+		GregorianCalendar fechaHora= new GregorianCalendar();
 		try {
 			rs=abm.traerRedSube(idRedSube);
 			rs.setContador(rs.getContador()+1);
+			rs.setFechaHora(fechaHora);
+			rs.setLinea("160");
 			abm.modificar(rs);
 		} catch(Exception e) { 
 			System.out.println(e);

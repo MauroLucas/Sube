@@ -28,4 +28,7 @@ public class RedSubeABM {
 		dao.actualizar(rs);
 	}
 
+	public double calcularDescuento(RedSube redSube) {
+		return 1;
+	}
 }

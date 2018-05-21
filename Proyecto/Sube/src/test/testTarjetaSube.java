@@ -1,6 +1,5 @@
 package test;
 
-import datos.EstadoSube;
 import negocio.TarjetaSubeABM;
 
 public class testTarjetaSube {
@@ -10,17 +9,17 @@ public class testTarjetaSube {
 		
 		test.agregarTarjeta();
 				
-//		test.eliminarTarjeta(3);
+//		test.eliminarTarjeta(6);
 		
 	}
 	
 	public void agregarTarjeta() {
 		float saldo = 50;
 		TarjetaSubeABM abm = new TarjetaSubeABM();
-		EstadoSube es = null;
 		int idUsuario=1;
+		int estado=0;
 		try{
-			abm.agregar(idUsuario, saldo, es);
+			abm.agregar(idUsuario, saldo, estado);
 		} catch(Exception e) {
 			System.out.println(e);
 		}

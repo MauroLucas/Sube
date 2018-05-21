@@ -1,7 +1,6 @@
 package negocio;
 
 import dao.TarjetaSubeDao;
-import datos.EstadoSube;
 import datos.TarjetaSube;
 
 public class TarjetaSubeABM {
@@ -15,8 +14,8 @@ public class TarjetaSubeABM {
 		return t;
 	}
 	
-	public long agregar(int idUsuario, float saldo, int estado, EstadoSube estadoSube) throws Exception{
-		TarjetaSube t= new TarjetaSube(idUsuario, saldo, estado, estadoSube);
+	public long agregar(int idUsuario, float saldo, int estado) throws Exception{
+		TarjetaSube t= new TarjetaSube(idUsuario, saldo, estado);
 		return dao.agregar(t);
 	}
 	
@@ -31,5 +30,8 @@ public class TarjetaSubeABM {
 	public void modificar(TarjetaSube tarjetaSube) throws Exception{
 		dao.actualizar(tarjetaSube);
 	}
-
+	
+	public double calcularDescuento(TarjetaSube tarjeta) {
+		return 1;
+	}
 }
