@@ -2,7 +2,6 @@ package negocio;
 
 import dao.TarjetaSubeDao;
 import datos.EstadoSube;
-import datos.RedSube;
 import datos.TarjetaSube;
 
 public class TarjetaSubeABM {
@@ -16,8 +15,8 @@ public class TarjetaSubeABM {
 		return t;
 	}
 	
-	public long agregar(int idUsuario, float saldo, EstadoSube estadoSube) throws Exception{
-		TarjetaSube t= new TarjetaSube(idUsuario, saldo, estadoSube);
+	public long agregar(int idUsuario, float saldo, int estado, EstadoSube estadoSube) throws Exception{
+		TarjetaSube t= new TarjetaSube(idUsuario, saldo, estado, estadoSube);
 		return dao.agregar(t);
 	}
 	

@@ -4,6 +4,7 @@ public class TarjetaSube {
 	private long nroTarjeta;
 	private int idUsuario;
 	private float saldo;
+	private int estado;
 	private EstadoSube estadoSube;
 	private RedSube redSube;
 	
@@ -11,10 +12,11 @@ public class TarjetaSube {
 		super();
 	}
 
-	public TarjetaSube(int idUsuario, float saldo, EstadoSube estadoSube) {
+	public TarjetaSube(int idUsuario, float saldo, int estado, EstadoSube estadoSube) {
 		super();
 		this.idUsuario = idUsuario;
 		this.saldo = saldo;
+		this.estado = estado;
 		this.estadoSube = estadoSube;
 	}
 
@@ -57,11 +59,27 @@ public class TarjetaSube {
 	public void setRedSube(RedSube redSube) {
 		this.redSube = redSube;
 	}
+	
+	public int getEstado() {
+		return estado;
+	}
+
+	public void setEstado(int estado) {
+		this.estado = estado;
+	}
+
+	public EstadoSube getEstadoSube() {
+		return estadoSube;
+	}
+
+	public void setEstadoSube(EstadoSube estadoSube) {
+		this.estadoSube = estadoSube;
+	}
 
 	@Override
 	public String toString() {
 		return "TarjetaSube [nroTarjeta=" + nroTarjeta + ", idUsuario=" + idUsuario + ", saldo=" + saldo
-				+ ", estadosube=" + estadoSube + "]";
+				+ ", estado=" + estado + "]";
 	}
 	
 }

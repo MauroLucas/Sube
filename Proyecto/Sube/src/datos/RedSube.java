@@ -8,15 +8,17 @@ public class RedSube {
 	private long idRedSube;
 	private GregorianCalendar fechaHora;
 	private int contador;
+	private String linea;
 	private TarjetaSube tarjetasube;
 	
 	public RedSube() {
 	}
 
-	public RedSube(GregorianCalendar fechaHora, int contador, TarjetaSube tarjetasube) {
+	public RedSube(GregorianCalendar fechaHora, int contador, String linea, TarjetaSube tarjetasube) {
 		super();
 		this.fechaHora = fechaHora;
 		this.contador = contador;
+		this.linea = linea;
 		this.tarjetasube = tarjetasube;
 	}
 
@@ -51,13 +53,23 @@ public class RedSube {
 	public void setTarjetasube(TarjetaSube tarjetasube) {
 		this.tarjetasube = tarjetasube;
 	}
+	
+	public String getLinea() {
+		return linea;
+	}
+
+	public void setLinea(String linea) {
+		this.linea = linea;
+	}
 
 	@Override
 	public String toString() {
-		return "RedSube [idRedSube: " + idRedSube + ", fechaHora: " + Funciones.traerFechaCortaHora(fechaHora) + ", contador: " + contador + "]";
+		return "RedSube [idRedSube: " + idRedSube + ", fechaHora: " + Funciones.traerFechaCortaHora(fechaHora) + ", contador: " + contador + ", linea: " + linea+"]";
 	}
 	
-	
+	public double calcularDescuento() {
+		return 1;
+	}
 	
 	
 }

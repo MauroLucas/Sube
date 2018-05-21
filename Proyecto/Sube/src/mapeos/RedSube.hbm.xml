@@ -11,6 +11,7 @@
 		</id>
 	<property name="fechaHora" type="calendar" column="fechaHora" />
 	<property name="contador" type="int" column="contador" />
+	<property name="linea" type="string" column="linea" />
 	<one-to-one name="tarjetasube" class="datos.TarjetaSube" cascade="delete"></one-to-one>
 	</class>
 </hibernate-mapping>

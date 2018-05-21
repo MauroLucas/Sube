@@ -8,6 +8,7 @@
 			<generator class="identity"/>
 		</id>
 		<property column="saldo" name="saldo" type="float"/>
+		<property column="estado" name="estado" type="int"/>
 		<one-to-one name="redSube" class="datos.RedSube" cascade="delete"></one-to-one>
 	</class>
 </hibernate-mapping>

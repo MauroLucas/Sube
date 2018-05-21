@@ -14,8 +14,8 @@ public class RedSubeABM {
 		return rs;
 	}
 	
-	public long agregar(GregorianCalendar fechaHora, int contador, TarjetaSube tarjetasube) throws Exception{
-		RedSube rs= new RedSube(fechaHora, contador, tarjetasube);
+	public long agregar(GregorianCalendar fechaHora, int contador, String linea, TarjetaSube tarjetasube) throws Exception{
+		RedSube rs= new RedSube(fechaHora, contador, linea, tarjetasube);
 		return dao.agregar(rs);
 	}
 	
