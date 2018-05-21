@@ -66,10 +66,5 @@ public class RedSube {
 	public String toString() {
 		return "RedSube [idRedSube: " + idRedSube + ", fechaHora: " + Funciones.traerFechaCortaHora(fechaHora) + ", contador: " + contador + ", linea: " + linea+"]";
 	}
-	
-	public double calcularDescuento() {
-		return 1;
-	}
-	
-	
+		
 }
