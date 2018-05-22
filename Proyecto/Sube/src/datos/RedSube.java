@@ -63,8 +63,14 @@ public class RedSube {
 	}
 
 	@Override
-	public String toString() {
-		return "RedSube [idRedSube: " + idRedSube + ", fechaHora: " + Funciones.traerFechaCortaHora(fechaHora) + ", contador: " + contador + ", linea: " + linea+"]";
+	public String toString(){
+		String string="";
+		try{
+			string="RedSube [idRedSube: " + idRedSube + ", fechaHora: " + Funciones.traerFechaCortaHora(fechaHora) + ", contador: " + contador + ", linea: " + linea+"]";
+		} catch (Exception e) {
+			string="RedSube [idRedSube: " + idRedSube + ", contador: " + contador + ", linea: " + linea+"]";
+		} 
+		return string;
 	}
 		
 }

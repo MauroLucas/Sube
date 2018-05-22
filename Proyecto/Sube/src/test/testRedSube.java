@@ -14,17 +14,15 @@ public class testRedSube {
 		RedSubeABM abm = new RedSubeABM();
 		
 //		test.agregarRedSube();
-		
-//		test.eliminarRedSube(6);
-		
-//		System.out.println(test.modificarRedSube(7).toString());
-		
-//		System.out.println(test.traerRedSube(7).toString());
+			
+//		System.out.println(test.modificarRedSube(9));
+//
+//		System.out.println(test.traerRedSube(9).toString());
 		
 		GregorianCalendar fechaHora = new GregorianCalendar();
 		double precio = 9.25;
 		try {
-			precio=precio*abm.calcularDescuento(7,"160",fechaHora);
+			precio=precio*abm.calcularDescuento(9,"12517",fechaHora);
 			System.out.println(precio);
 		} catch (Exception e) {
 			System.out.println(e);
@@ -36,23 +34,14 @@ public class testRedSube {
 		RedSubeABM abmRedSube = new RedSubeABM();
 		GregorianCalendar fechaHora = null;
 		int contador=0; 
-		int nroTarjeta=7;
-		String linea="Roca";
+		int nroTarjeta=9;
+		String linea="";
 		TarjetaSubeABM abmTarjeta = new TarjetaSubeABM();
 		
 		try{
 			TarjetaSube tarjetasube= abmTarjeta.traerTarjetaSube(nroTarjeta);
 			abmRedSube.agregar(fechaHora, contador, linea, tarjetasube);	
 		} catch(Exception e) {
-			System.out.println(e);
-		}
-	}
-	
-	public void eliminarRedSube(long idRedSube) {
-		RedSubeABM abm = new RedSubeABM();
-		try {
-			abm.eliminar(idRedSube);
-		} catch(Exception e) { 
 			System.out.println(e);
 		}
 	}
@@ -71,10 +60,9 @@ public class testRedSube {
 	public RedSube modificarRedSube(long idRedSube) {
 		RedSubeABM abm = new RedSubeABM();
 		RedSube rs = null;
-		GregorianCalendar fechaHora= new GregorianCalendar();
+		GregorianCalendar fechaHora= null;
 		try {
 			rs=abm.traerRedSube(idRedSube);
-			rs.setContador(rs.getContador()+1);
 			rs.setFechaHora(fechaHora);
 			rs.setLinea("160");
 			abm.modificar(rs);
