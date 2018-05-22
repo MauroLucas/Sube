@@ -11,6 +11,7 @@ public class testRedSube {
 
 	public static void main(String[] args) {
 		testRedSube test= new testRedSube();
+		RedSubeABM abm = new RedSubeABM();
 		
 //		test.agregarRedSube();
 		
@@ -18,8 +19,17 @@ public class testRedSube {
 		
 //		System.out.println(test.modificarRedSube(7).toString());
 		
-		System.out.println(test.traerRedSube(7).toString());
-
+//		System.out.println(test.traerRedSube(7).toString());
+		
+		GregorianCalendar fechaHora = new GregorianCalendar();
+		double precio = 9.25;
+		try {
+			precio=precio*abm.calcularDescuento(7,"160",fechaHora);
+			System.out.println(precio);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		
 	}
 	
 	public void agregarRedSube() {
