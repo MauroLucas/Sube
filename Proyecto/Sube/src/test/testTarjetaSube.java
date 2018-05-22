@@ -1,15 +1,30 @@
 package test;
 
 import negocio.TarjetaSubeABM;
+import datos.TarjetaSube;
 
 public class testTarjetaSube {
 
 	public static void main(String[] args) {
 		testTarjetaSube test= new testTarjetaSube();
 		
-		test.agregarTarjeta();
+//		test.agregarTarjeta();
 				
 //		test.eliminarTarjeta(6);
+		
+		
+		double precio= 9.25;
+		TarjetaSubeABM abmTarjeta= new TarjetaSubeABM();
+		
+		try {
+			TarjetaSube tarjeta= abmTarjeta.traerTarjetaSube(7);
+			tarjeta.setEstado(2);
+			abmTarjeta.modificar(tarjeta);
+			precio=precio*abmTarjeta.calcularDescuento(tarjeta);
+			System.out.println((float)precio);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
 		
 	}
 	

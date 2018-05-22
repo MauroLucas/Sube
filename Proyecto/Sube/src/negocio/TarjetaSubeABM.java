@@ -32,6 +32,26 @@ public class TarjetaSubeABM {
 	}
 	
 	public double calcularDescuento(TarjetaSube tarjeta) {
-		return 1;
+		/* IMPORTANTE!: El metodo está pensado para utilizar su salida multiplicandola por el precio. 
+		En caso de no existir descuento devuelve 1. */
+		
+		double descuento=1;
+		int estado = tarjeta.getEstado();
+		
+		switch(estado) {
+			// Estado 0: Sin Descuentos
+			case 0:
+				break;
+			// Estado 1: Tarifa Social
+			case 1:
+				descuento=0.45;
+				break;
+			// Estado 2: Boleto Estudiantil
+			case 2:
+				descuento=0;
+				break;
+		}
+	
+		return descuento;
 	}
 }
