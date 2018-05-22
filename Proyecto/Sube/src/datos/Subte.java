@@ -1,5 +1,6 @@
 package datos;
 import java.util.Set;
+import negocio.CostoSubte;
 public class Subte extends TransportePublico {
 	
 	private Set<Parada> paradas;
@@ -25,7 +26,7 @@ public class Subte extends TransportePublico {
 	public double calcularCostoDeViaje(Viaje viaje) {
 		double costoViaje=0;
 		if(viaje instanceof ViajeSubte) {
-			 
+			 costoViaje = CostoSubte.getInstance().traerCostoSubte();
 		}
 		return costoViaje;
 	}
