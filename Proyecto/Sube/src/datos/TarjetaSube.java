@@ -5,19 +5,17 @@ public class TarjetaSube {
 	private int idUsuario;
 	private float saldo;
 	private int estado;
-	private EstadoSube estadoSube;
 	private RedSube redSube;
 	
 	public TarjetaSube() {
 		super();
 	}
 
-	public TarjetaSube(int idUsuario, float saldo, int estado, EstadoSube estadoSube) {
+	public TarjetaSube(int idUsuario, float saldo, int estado) {
 		super();
 		this.idUsuario = idUsuario;
 		this.saldo = saldo;
 		this.estado = estado;
-		this.estadoSube = estadoSube;
 	}
 
 	public long getNroTarjeta() {
@@ -44,14 +42,6 @@ public class TarjetaSube {
 		this.saldo = saldo;
 	}
 
-	public EstadoSube getEstadosube() {
-		return estadoSube;
-	}
-
-	public void setEstadosube(EstadoSube estadoSube) {
-		this.estadoSube = estadoSube;
-	}
-
 	public RedSube getRedSube() {
 		return redSube;
 	}
@@ -66,14 +56,6 @@ public class TarjetaSube {
 
 	public void setEstado(int estado) {
 		this.estado = estado;
-	}
-
-	public EstadoSube getEstadoSube() {
-		return estadoSube;
-	}
-
-	public void setEstadoSube(EstadoSube estadoSube) {
-		this.estadoSube = estadoSube;
 	}
 
 	@Override
