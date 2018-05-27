@@ -4,20 +4,20 @@ import java.util.GregorianCalendar;
 
 public class ViajeSubte extends Viaje{
 	
-	private int origen;
+	private Parada origen;
 	
 	public ViajeSubte() {}
 
-	public ViajeSubte(float monto, GregorianCalendar fechaHora, int tarjetaSube, int subte, int origen) {
+	public ViajeSubte(float monto, GregorianCalendar fechaHora, TarjetaSube tarjetaSube, TransportePublico subte, Parada origen) {
 		super(monto,fechaHora,tarjetaSube,subte);
 		this.origen = origen;
 	}
 
-	public int getOrigen() {
+	public Parada getOrigen() {
 		return origen;
 	}
 
-	public void setOrigen(int origen) {
+	public void setOrigen(Parada origen) {
 		this.origen = origen;
 	}
 

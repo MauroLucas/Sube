@@ -4,20 +4,20 @@ import java.util.GregorianCalendar;
 
 public class ViajeColectivo extends Viaje {
 	
-	private int tramo;
+	private Tramo tramo;
 	
 	public ViajeColectivo() {}
 
-	public ViajeColectivo(float monto, GregorianCalendar fechaHora, int tarjetaSube, int colectivo, int tramo) {
+	public ViajeColectivo(float monto, GregorianCalendar fechaHora, TarjetaSube tarjetaSube, TransportePublico colectivo, Tramo tramo) {
 		super(monto, fechaHora, tarjetaSube, colectivo);
 		this.tramo = tramo;
 	}
 
-	public int getTramo() {
+	public Tramo getTramo() {
 		return tramo;
 	}
 
-	public void setTramo(int tramo) {
+	public void setTramo(Tramo tramo) {
 		this.tramo = tramo;
 	}
 

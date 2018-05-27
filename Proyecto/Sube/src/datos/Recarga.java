@@ -6,7 +6,7 @@ public class Recarga extends Transaccion {
 	
 	public Recarga(){}
 	
-	public Recarga(float monto, GregorianCalendar fechaHora, int tarjetaSube){
+	public Recarga(float monto, GregorianCalendar fechaHora, TarjetaSube tarjetaSube){
 		super(monto,fechaHora,tarjetaSube);
 	}
 

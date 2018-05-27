@@ -20,7 +20,7 @@ public class TransaccionABM {
 	
 	RecargaDao dao=RecargaDao.getInstance();
 	
-	public long agregarRecarga(float monto, GregorianCalendar fechaHora, int tarjetaSube) {
+	public long agregarRecarga(float monto, GregorianCalendar fechaHora, TarjetaSube tarjetaSube) {
 		Recarga r=new Recarga(monto,fechaHora,tarjetaSube);
 		return dao.agregar(r);
 	}
@@ -43,7 +43,7 @@ public class TransaccionABM {
 	
 	ViajeTrenDao daoVT=ViajeTrenDao.getInstance();
 	
-	public long agregarViajeTren(float monto, GregorianCalendar fechaHora, int tarjetaSube, int tren, int origen, int destino) {
+	public long agregarViajeTren(float monto, GregorianCalendar fechaHora, TarjetaSube tarjetaSube, TransportePublico tren, Parada origen, Parada destino) {
 		ViajeTren vt=new ViajeTren(monto,fechaHora,tarjetaSube,tren,origen,destino);
 		return daoVT.agregar(vt);
 	}
@@ -58,7 +58,7 @@ public class TransaccionABM {
 	
 	ViajeSubteDao daoVS=ViajeSubteDao.getInstance();
 	
-	public long agregarViajeSubte(float monto, GregorianCalendar fechaHora, int tarjetaSube, int subte, int origen) {
+	public long agregarViajeSubte(float monto, GregorianCalendar fechaHora, TarjetaSube tarjetaSube, TransportePublico subte, Parada origen) {
 		ViajeSubte vs=new ViajeSubte(monto,fechaHora,tarjetaSube,subte,origen);
 		return daoVS.agregar(vs);
 	}
@@ -73,7 +73,7 @@ public class TransaccionABM {
 	
 	ViajeColectivoDao daoVC=ViajeColectivoDao.getInstance();
 	
-	public long agregarViajeColectivo(float monto, GregorianCalendar fechaHora, int tarjetaSube, int colectivo, int tramo) {
+	public long agregarViajeColectivo(float monto, GregorianCalendar fechaHora, TarjetaSube tarjetaSube, TransportePublico colectivo, Tramo tramo) {
 		ViajeColectivo vc=new ViajeColectivo(monto,fechaHora,tarjetaSube,colectivo,tramo);
 		return daoVC.agregar(vc);
 	}

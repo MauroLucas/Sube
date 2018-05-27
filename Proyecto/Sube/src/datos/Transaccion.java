@@ -7,11 +7,11 @@ public abstract class Transaccion {
 	protected int idTransaccion;
 	protected float monto;
 	protected GregorianCalendar fechaHora;
-	protected int tarjetaSube;
+	protected TarjetaSube tarjetaSube;
 	
 	public Transaccion(){}
 	
-	public Transaccion(float monto, GregorianCalendar fechaHora, int tarjetaSube) {
+	public Transaccion(float monto, GregorianCalendar fechaHora, TarjetaSube tarjetaSube) {
 		super();
 		this.monto = monto;
 		this.fechaHora = fechaHora;
@@ -42,11 +42,11 @@ public abstract class Transaccion {
 		this.fechaHora = fechaHora;
 	}
 
-	public int getTarjetaSube() {
+	public TarjetaSube getTarjetaSube() {
 		return tarjetaSube;
 	}
 
-	public void setTarjetaSube(int tarjetaSube) {
+	public void setTarjetaSube(TarjetaSube tarjetaSube) {
 		this.tarjetaSube = tarjetaSube;
 	}
 

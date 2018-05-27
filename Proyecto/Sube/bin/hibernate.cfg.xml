@@ -14,5 +14,9 @@
 		
 		<!-- Mapeo de entidades -->
 		<mapping resource="mapeos/Transaccion.hbm.xml"/>
+		<mapping resource="mapeos/TransportePublico.hbm.xml"/>
+		<mapping resource="mapeos/TarjetaSube.hbm.xml"/>
+		<mapping resource="mapeos/Parada.hbm.xml"/>
+		<mapping resource="mapeos/Tramo.hbm.xml"/>
 	</session-factory>
 </hibernate-configuration>

@@ -4,30 +4,30 @@ import java.util.GregorianCalendar;
 
 public class ViajeTren extends Viaje{
 	
-	private int origen;
-	private int destino;
+	private Parada origen;
+	private Parada destino;
 	
 	public ViajeTren() {}
 	
-	public ViajeTren(float monto, GregorianCalendar fechaHora, int tarjetaSube, int tren, int origen, int destino) {
+	public ViajeTren(float monto, GregorianCalendar fechaHora, TarjetaSube tarjetaSube, TransportePublico tren, Parada origen, Parada destino) {
 		super(monto,fechaHora,tarjetaSube,tren);
 		this.origen = origen;
 		this.destino = destino;
 	}
 
-	public int getOrigen() {
+	public Parada getOrigen() {
 		return origen;
 	}
 
-	public void setOrigen(int origen) {
+	public void setOrigen(Parada origen) {
 		this.origen = origen;
 	}
 
-	public int getDestino() {
+	public Parada getDestino() {
 		return destino;
 	}
 
-	public void setDestino(int destino) {
+	public void setDestino(Parada destino) {
 		this.destino = destino;
 	}
 
