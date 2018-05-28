@@ -18,6 +18,7 @@ public class TransaccionABM {
 		return instancia;
 	}
 	
+	TransaccionDao td= new TransaccionDao();
 	RecargaDao dao=RecargaDao.getInstance();
 	
 	public long agregarRecarga(float monto, GregorianCalendar fechaHora, TarjetaSube tarjetaSube) {
@@ -31,6 +32,10 @@ public class TransaccionABM {
 	
 	public boolean eliminarRecarga(Recarga r) {
 		return dao.eliminar(r);
+	}
+	
+	public Transaccion traerTransaccion(int idTransaccion) {
+		return td.traer(idTransaccion);
 	}
 	
 	public Recarga traerRecarga(int idRecarga) {
