@@ -2,7 +2,7 @@ package dao;
 
 import datos.ViajeSubte;
 
-public class ViajeSubteDao {
+public class ViajeSubteDao extends DAO{
 	
 	private static ViajeSubteDao instancia = null; // Patrón Singleton
 
@@ -14,18 +14,6 @@ public class ViajeSubteDao {
 		return instancia;
 	}
 	
-	DAO dao= Singleton.getInstanciaDao();
 	
-	public long agregar(ViajeSubte vs) {
-		return dao.agregar(vs);
-	}
-	
-	public boolean modificar(ViajeSubte vs) {
-		return dao.actualizar(vs);
-	}
-	
-	public boolean eliminar(ViajeSubte vs) {
-		return dao.eliminar(vs);
-	}
 
 }

@@ -2,7 +2,7 @@ package dao;
 
 import datos.ViajeTren;
 
-public class ViajeTrenDao {
+public class ViajeTrenDao extends DAO{
 	
 	private static ViajeTrenDao instancia = null; // Patrón Singleton
 
@@ -14,18 +14,5 @@ public class ViajeTrenDao {
 		return instancia;
 	}
 	
-	DAO dao= Singleton.getInstanciaDao();
-	
-	public long agregar(ViajeTren vt) {
-		return dao.agregar(vt);
-	}
-	
-	public boolean modificar(ViajeTren vt) {
-		return dao.actualizar(vt);
-	}
-	
-	public boolean eliminar(ViajeTren vt) {
-		return dao.eliminar(vt);
-	}
 
 }

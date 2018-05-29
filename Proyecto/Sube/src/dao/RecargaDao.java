@@ -17,21 +17,7 @@ public class RecargaDao extends DAO{
 			instancia = new RecargaDao();
 		return instancia;
 	}
-	
-	DAO dao= Singleton.getInstanciaDao();
-	
-	public long agregar(Recarga r) {
-		return dao.agregar(r);
-	}
-	
-	public boolean modificar(Recarga r) {
-		return dao.actualizar(r);
-	}
-	
-	public boolean eliminar(Recarga r) {
-		return dao.eliminar(r);
-	}
-	
+
 	public Recarga traerRecarga(int idRecarga) throws HibernateException {
 		Recarga objeto = null;
 		try {

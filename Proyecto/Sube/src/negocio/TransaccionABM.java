@@ -18,77 +18,69 @@ public class TransaccionABM {
 		return instancia;
 	}
 	
-	TransaccionDao td= new TransaccionDao();
-	RecargaDao dao=RecargaDao.getInstance();
 	
 	public long agregarRecarga(float monto, GregorianCalendar fechaHora, TarjetaSube tarjetaSube) {
 		Recarga r=new Recarga(monto,fechaHora,tarjetaSube);
-		return dao.agregar(r);
+		return RecargaDao.getInstance().agregar(r);
 	}
 	
 	public boolean modificarRecarga(Recarga r) {
-		return dao.modificar(r);
+		return RecargaDao.getInstance().actualizar(r);
 	}
 	
 	public boolean eliminarRecarga(Recarga r) {
-		return dao.eliminar(r);
+		return RecargaDao.getInstance().eliminar(r);
 	}
 	
 	public Transaccion traerTransaccion(int idTransaccion) {
-		return td.traer(idTransaccion);
+		return TransaccionDao.getInstance().traer(idTransaccion);
 	}
 	
 	public Recarga traerRecarga(int idRecarga) {
-		return dao.traerRecarga(idRecarga);
+		return RecargaDao.getInstance().traerRecarga(idRecarga);
 	}
 	
 	public List<Recarga> traerRecarga() {
-		return dao.traerRecarga();
+		return RecargaDao.getInstance().traerRecarga();
 	}
-	
-	ViajeTrenDao daoVT=ViajeTrenDao.getInstance();
 	
 	public long agregarViajeTren(float monto, GregorianCalendar fechaHora, TarjetaSube tarjetaSube, TransportePublico tren, Parada origen, Parada destino) {
 		ViajeTren vt=new ViajeTren(monto,fechaHora,tarjetaSube,tren,origen,destino);
-		return daoVT.agregar(vt);
+		return ViajeTrenDao.getInstance().agregar(vt);
 	}
 	
 	public boolean modificarViajeTren(ViajeTren vt) {
-		return daoVT.modificar(vt);
+		return ViajeTrenDao.getInstance().actualizar(vt);
 	}
 	
 	public boolean eliminarViajeTren(ViajeTren vt) {
-		return daoVT.eliminar(vt);
+		return ViajeTrenDao.getInstance().eliminar(vt);
 	}
-	
-	ViajeSubteDao daoVS=ViajeSubteDao.getInstance();
 	
 	public long agregarViajeSubte(float monto, GregorianCalendar fechaHora, TarjetaSube tarjetaSube, TransportePublico subte, Parada origen) {
 		ViajeSubte vs=new ViajeSubte(monto,fechaHora,tarjetaSube,subte,origen);
-		return daoVS.agregar(vs);
+		return ViajeSubteDao.getInstance().agregar(vs);
 	}
 	
 	public boolean modificarViajeSubte(ViajeSubte vs) {
-		return daoVS.modificar(vs);
+		return ViajeSubteDao.getInstance().actualizar(vs);
 	}
 	
 	public boolean eliminarViajeSubte(ViajeSubte vs) {
-		return daoVS.eliminar(vs);
+		return ViajeSubteDao.getInstance().eliminar(vs);
 	}
-	
-	ViajeColectivoDao daoVC=ViajeColectivoDao.getInstance();
-	
+		
 	public long agregarViajeColectivo(float monto, GregorianCalendar fechaHora, TarjetaSube tarjetaSube, TransportePublico colectivo, Tramo tramo) {
 		ViajeColectivo vc=new ViajeColectivo(monto,fechaHora,tarjetaSube,colectivo,tramo);
-		return daoVC.agregar(vc);
+		return ViajeColectivoDao.getInstance().agregar(vc);
 	}
 	
 	public boolean modificarViajeColectivo(ViajeColectivo vc) {
-		return daoVC.modificar(vc);
+		return ViajeColectivoDao.getInstance().actualizar(vc);
 	}
 	
 	public boolean eliminarViajeColectivo(ViajeColectivo vc) {
-		return daoVC.eliminar(vc);
+		return ViajeColectivoDao.getInstance().eliminar(vc);
 	}
 
 }
