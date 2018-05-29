@@ -6,14 +6,14 @@ import org.hibernate.Transaction;
 
 public class DAO {
 	protected static Session session;
-	protected Transaction tx;
+	private Transaction tx;
 	
 	protected void iniciaOperacion() throws HibernateException {
 		session = HibernateUtil.getSessionFactory().openSession();
 		tx = session.beginTransaction();
 	}
 	
-	protected void manejaExcepcion(HibernateException he) throws HibernateException {
+	private void manejaExcepcion(HibernateException he) throws HibernateException {
 		tx.rollback();
 		throw new HibernateException("Error accediendo a los datos.", he);
 	}

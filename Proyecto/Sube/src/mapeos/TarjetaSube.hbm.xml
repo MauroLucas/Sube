@@ -12,9 +12,3 @@
 		<one-to-one name="redSube" class="datos.RedSube" cascade="delete"></one-to-one>
 	</class>
 </hibernate-mapping>
-
-
-
-
-
-
