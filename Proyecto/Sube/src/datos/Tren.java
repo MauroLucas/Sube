@@ -28,11 +28,11 @@ public class Tren extends TransportePublico {
 	public double calcularCostoDeViaje(Viaje viaje) {
 		double costoViaje=0;
 		if(viaje instanceof ViajeTren) {
-			//if(((ViajeTren) viaje).getDestino()==null) {
-				//costoViaje = SeccionABM.getInstance().traer((long)3).getCosto();
-			//}else {
-				//costoViaje = SeccionRecorridoABM.getInstance().traer(viaje.getOrigen(), viaje.getDestino()).getSeccion().getCosto();
-			//}
+			if(((ViajeTren) viaje).getDestino()==null) {
+				costoViaje = SeccionABM.getInstance().traer((long)3).getCosto();
+			}else {
+				costoViaje = SeccionRecorridoABM.getInstance().traer(viaje.getOrigen(), viaje.getDestino()).getSeccion().getCosto();
+			}
 		}
 		return costoViaje;
 	}
